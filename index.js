@@ -7,13 +7,14 @@ const apiRouter = require('./router/router')
 
 const app = express()
 app.use(bodyParser.json())
+app.use(cors())
 
 mongoose.connect(process.env.MONGO_URL, {
     useNewUrlParser: true,
     useCreateIndex: true,
     useUnifiedTopology: true,                                                                            
     useFindAndModify: false
-}).then(()=> console.log('database  da ket noi')).catch((err) => console.log(err))
+}).then(()=> console.log('database da ket noi')).catch((err) => console.log(err))
 
 app.use('/api', apiRouter)
 

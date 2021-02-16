@@ -1,18 +1,24 @@
 <template>
   <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <h1 class="text-center">TodoList</h1>
+    <ListWork></ListWork>
+    <Prop :ten="author"></Prop>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
+import Prop from '../components/prop'
+import ListWork from '../components/listWork'
 export default {
   name: 'Home',
+  data() {
+    return {
+      author : 'hoa'
+    }
+  },
   components: {
-    HelloWorld
+    Prop,
+    ListWork,
   }
 }
 </script>
